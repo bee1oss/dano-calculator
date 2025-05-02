@@ -3,11 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import HomeScreen from './screens/HomeScreen';
-import ProductManagerScreen from './screens/ProductManagerScreen';
+import HomeScreen from './src/HomeScreen';
+import ProductManagerScreen from './src/ProductManagerScreen';
 
 export type RootTabParamList = {
-  Teslimat:undefined;
+  Hesaplama:undefined;
   'Ürün Yönetimi':undefined;
 };
 
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Teslimat" component={HomeScreen} />
+        <Tab.Screen name="Hesaplama" component={HomeScreen} />
         <Tab.Screen name="Ürün Yönetimi" component={ProductManagerScreen} />
       </Tab.Navigator>
     </NavigationContainer>
