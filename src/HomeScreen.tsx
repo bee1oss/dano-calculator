@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, StyleSheet, BackHandler } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { Product } from './data/defaultProducts';
+import { readFromFile } from './Product/fileOperations';
+import { defaultProducts } from './data/defaultProducts';
 
 const HomeScreen: React.FC = () => {
+  const [products,setProducts] = useState<Product[]>([]);
+
+  useEffect(() =>{
+    readFromFile(setProducts,defaultProducts)
+  })
+
   const handleExit = () => {
-    BackHandler.exitApp(); 
+    BackHandler.exitApp();
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Teslimat Ekranı    </Text>
-      <Button title="Çıkış Yap" onPress={handleExit} color="red" />
+      
     </View>
   );
 };
